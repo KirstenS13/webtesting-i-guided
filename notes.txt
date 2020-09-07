@@ -1,0 +1,96 @@
+9/7/20 - LECTURE - WEB UNIT TESTING
+
+We test things to make sure it works as intended
+
+Testing the backend is a lot easier than testing the frontend
+
+When we write an endpoint, we test it manually with Insomnia or Postman
+    - Maybe we test code with a console.log
+
+Up until now, testing has been very manual and tedious
+
+Automated testing is way faster
+
+Automated Testing:
+    -- writing code to test other code
+    -- it runs automatically
+
+Regression:
+    -- new code breaks old code
+    -- Automated testing helps fix that
+
+Good to get into the habit of writing automated tests for your work
+    -- makes you more valuable and trusted as a developer
+
+From here on out, always write tests
+
+Main drawback: you need to write more code
+    -- needs additional tooling and dependencies
+    -- takes time to pinpoint and debug failing tests -- also a benefit though
+
+Testing is always worth the time
+
+Types of automated testing:
+    -- Unit testing 
+        - test small pieces of code (pure fxns, utility fxns, etc)
+    -- Integration testing 
+        - testing how code works with other code
+    -- End-to-End testing 
+        - testing how the whole app/code is working
+
+
+Tonight is Unit Testing
+
+Tooling (Tools) for Automated Testing
+    -- Jest - test runner
+    -- cypress - E2E testing
+    -- react-testing-library
+
+Jest:
+    -- a test runner
+    -- takes a lot of test code and runs it against app code
+    -- can be used for front or back end
+
+To decide which tool/testing library to use, ask yourself what you're testing:
+    -- user interaction?
+    -- functions?
+    -- endpoints?
+
+For backend:
+    -- functions
+    -- endpoints
+    -- data in database
+
+We'll be using Jest tonight, because we've used it for the front-end before
+
+Jest:
+    npm install --save-dev jest
+
+Test files must be in:
+    1) Directory named __test__
+    2) file ending with .test.js or .spec.js
+
+    -- these aren't the rules for all test runners, just for jest
+
+Define test script in package.json
+    -- Run test with "npm test"
+    -- can't run with "npm jest" because jest is a command line interface
+
+    -- Only test and start commands don't need "run"
+
+    -- "test": "jest"
+    -- "test:watch": "jest --watch"
+        -- watches for changes and automatically runs tests when things change
+
+Test Driven Development(TDD):
+    -- write the test first
+    -- write the code that makes the test pass second
+
+    -- this helps a lot with writing good quality code
+        -- you have to think of the edge cases first, before you write the code
+    
+    -- then you can add more edge cases to test, then code to make it pass
+
+.toBe is reserved for primitive data Types
+
+.toEqual is for data types like objects etc
